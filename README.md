@@ -139,3 +139,6 @@ All contributions are welcome. Just make a PR. Below is a list of general improv
 - Improve documentation
 - Clean up code (by fixing pep8 errors)
 - Better algorithms that reduce time complexity (espescially for course #3 & #4)
+
+just write # nopep8 after two spaces of any line of code two remove pep8 error
+or you can apply this command --ignore=E223 file_name.py to remove error of whole file
