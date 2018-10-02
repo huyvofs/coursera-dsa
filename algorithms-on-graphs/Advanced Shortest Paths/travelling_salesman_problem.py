@@ -55,14 +55,17 @@ class DistPreprocessLarge:
         shortcut_cover = 0
         level = 0
         # Compute correctly the values for the above heuristics before computing the node importance
-        importance = (shortcut_count - len(self.adj[0][v]) - len(self.adj[1][v])) + neighbors + shortcut_cover + level
+        importance = (
+            (shortcut_count - len(self.adj[0][v]) - len(self.adj[1][v]))
+            + neighbors + shortcut_cover + level
+        )
         return importance, shortcuts, level
 
     # See description of this method in the starter for friend_suggestion
     def clear():
         for v in self.visited:
             self.bidistance[0][v] = self.bidistance[1][v] = self.INFINITY
-            self.visited[v] = False;
+            self.visited[v] = False
         del self.visited[:]
 
     # See description of this method in the starter for friend_suggestion
@@ -84,8 +87,9 @@ class DistPreprocessLarge:
 INF = 10 ** 9
 
 
-# Returns the adjacency matrix of a graph on the given vertices with edges equal to the distances between
-# those nodes in the initial road network
+# Returns the adjacency matrix of a graph on the given vertices with
+# edges equal to the distances between those
+# nodes in the initial road network
 def make_graph(ch, vertices):
     n = next(vertices)
     vertices = list(vertices)
@@ -109,11 +113,11 @@ def readl():
 
 
 if __name__ == '__main__':
-    n,m = readl()
+    n, m = readl()
     adj = [[[] for _ in range(n)], [[] for _ in range(n)]]
     cost = [[[] for _ in range(n)], [[] for _ in range(n)]]
     for e in range(m):
-        u,v,c = readl()
+        u, v, c = readl()
         adj[0][u-1].append(v-1)
         cost[0][u-1].append(c)
         adj[1][v-1].append(u-1)
