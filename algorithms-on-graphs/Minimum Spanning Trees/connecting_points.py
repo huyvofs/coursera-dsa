@@ -1,13 +1,15 @@
-#Uses python3
+# Uses python3
 import sys
 import math
+
 
 def distance(xi, yi, xj, yj):
     return math.sqrt(math.pow(xi-xj, 2) + math.pow(yi-yj, 2))
 
+
 def minimum_distance(vertices, adj, weight):
     result = 0.
-    X = set();
+    X = set()
     X.add(0)
 
     while len(X) != vertices:

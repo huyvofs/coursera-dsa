@@ -20,7 +20,8 @@ def build_trie(patterns):
         current['$'] = {}
     return tree
 
-def solve (p, q):
+
+def solve(p, q):
     patterns = [p, q]
     for i in range(1, len(p)):
         patterns.append(p[i:])
@@ -43,9 +44,9 @@ def solve (p, q):
     return p
 
 
-p = sys.stdin.readline ().strip ()
-q = sys.stdin.readline ().strip ()
+p = sys.stdin.readline().strip()
+q = sys.stdin.readline().strip()
 
-ans = solve (p, q)
+ans = solve(p, q)
 
-sys.stdout.write (ans + '\n')
+sys.stdout.write(ans + '\n')

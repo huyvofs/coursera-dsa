@@ -1,7 +1,8 @@
-#Uses python3
+# Uses python3
 
 import sys
 import queue
+
 
 def distance(adj, s, t):
     n = len(adj)
@@ -18,6 +19,7 @@ def distance(adj, s, t):
                 dist[u] = dist[v] + 1
 
     return -1 if dist[t] == n else dist[t]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

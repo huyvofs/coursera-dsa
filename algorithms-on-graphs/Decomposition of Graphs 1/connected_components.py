@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 
 import sys
 
@@ -19,6 +19,7 @@ def number_of_components(adj):
             DFS(vertex)
 
     return components
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

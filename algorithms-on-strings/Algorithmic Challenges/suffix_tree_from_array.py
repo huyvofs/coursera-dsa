@@ -29,7 +29,7 @@ if __name__ == '__main__':
     sa = list(map(int, sys.stdin.readline().strip().split()))
     lcp = list(map(int, sys.stdin.readline().strip().split()))
     print(text)
-    # Build the suffix tree and get a mapping from 
+    # Build the suffix tree and get a mapping from
     # suffix tree node ID to the list of outgoing Edges.
     tree = suffix_array_to_suffix_tree(sa, lcp, text)
     """

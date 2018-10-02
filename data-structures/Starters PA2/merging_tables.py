@@ -9,10 +9,12 @@ parent = list(range(0, n))
 ans = [max(lines)]
 act = {}
 
+
 def getParent(table):
     if table != parent[table]:
         parent[table] = getParent(parent[table])
     return parent[table]
+
 
 def merge(destination, source):
     realDestination, realSource = getParent(destination), getParent(source)
@@ -44,6 +46,7 @@ def merge(destination, source):
         ans[0] = lineRoot
 
     return True
+
 
 for i in range(m):
     destination, source = map(int, sys.stdin.readline().split())

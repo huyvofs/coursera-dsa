@@ -31,7 +31,8 @@ def CountOccurrences(pattern, bwt, starts, occ_counts_before):
             if symbol in bwt[top:bottom+1]:
                 first_occurence = starts[symbol]
                 top = first_occurence + occ_counts_before[symbol][top]
-                bottom = first_occurence + occ_counts_before[symbol][bottom+1] - 1
+                bottom = first_occurence + \
+                    occ_counts_before[symbol][bottom+1] - 1
             else:
                 return 0
         else:
@@ -46,5 +47,6 @@ if __name__ == '__main__':
     starts, occ_counts_before = PreprocessBWT(bwt)
     occurrence_counts = []
     for pattern in patterns:
-        occurrence_counts.append(CountOccurrences(pattern, bwt, starts, occ_counts_before))
+        occurrence_counts.append(CountOccurrences(
+            pattern, bwt, starts, occ_counts_before))
     print(' '.join(map(str, occurrence_counts)))

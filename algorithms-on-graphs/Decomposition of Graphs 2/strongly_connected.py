@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 
 import sys
 
@@ -11,6 +11,7 @@ def reverse_graph(adj):
         for adj_vertex in adj[vertex]:
             reverse_adj[adj_vertex].append(vertex)
     return reverse_adj
+
 
 def number_of_strongly_connected_components(adj):
     result = 0
@@ -44,6 +45,7 @@ def number_of_strongly_connected_components(adj):
             result += 1
 
     return result
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

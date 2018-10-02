@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 
 import sys
 
@@ -6,6 +6,7 @@ import sys
 def move_vertex(vertex, src, dst):
     src.remove(vertex)
     dst.append(vertex)
+
 
 def acyclic(adj):
     finish = []
@@ -28,6 +29,7 @@ def acyclic(adj):
         if explore(set[0]):
             return 1
     return 0
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

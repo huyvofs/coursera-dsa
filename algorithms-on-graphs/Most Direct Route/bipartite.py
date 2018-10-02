@@ -1,7 +1,8 @@
-#Uses python3
+# Uses python3
 
 import sys
 import queue
+
 
 def bipartite(adj):
     visited = [False]*len(adj)
@@ -25,6 +26,7 @@ def bipartite(adj):
                     queue.append(u)
 
     return 1
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
