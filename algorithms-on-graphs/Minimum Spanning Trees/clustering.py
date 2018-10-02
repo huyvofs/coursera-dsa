@@ -1,9 +1,11 @@
-#Uses python3
+# Uses python3
 import sys
 import math
 
+
 def distance(xi, yi, xj, yj):
     return math.sqrt(math.pow(xi-xj, 2) + math.pow(yi-yj, 2))
+
 
 def clustering(n, adj, weight, k):
     X = set()
@@ -27,6 +29,7 @@ def clustering(n, adj, weight, k):
 
     d = T.pop(len(T)-1)
     return weight[d[0]][d[1]]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

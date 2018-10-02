@@ -1,6 +1,7 @@
 # Uses python3
 import sys
 
+
 def merge(a, b, count):
     res = []
     i = j = 0
@@ -16,16 +17,19 @@ def merge(a, b, count):
     res.extend(b[j:])
     return res
 
+
 def merge_sort(a, count):
     if len(a) < 2:
         return a
     mid = len(a) // 2
     return merge(merge_sort(a[:mid], count), merge_sort(a[mid:], count), count)
 
+
 def get_number_of_inversions(a):
     count = [0]
     sorted = merge_sort(a, count)
     return count[0]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

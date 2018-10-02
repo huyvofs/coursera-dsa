@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 import sys
 
 # Return the trie built from patterns
@@ -9,6 +9,8 @@ import sys
 # contains all the trie edges outgoing from the corresponding
 # node, and the keys are the letters on those edges, and the
 # values are the node IDs to which these edges lead.
+
+
 def build_trie(patterns):
     tree = dict()
     tree[0] = {}

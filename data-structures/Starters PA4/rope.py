@@ -2,11 +2,14 @@
 
 import sys
 
+
 class Rope:
     def __init__(self, s):
         self.s = s
+
     def result(self):
         return self.s
+
     def process(self, i, j, k):
         substring = self.s[i:j+1]
         self.s = self.s[:i] + self.s[j+1:]
@@ -14,6 +17,7 @@ class Rope:
             self.s = substring + self.s
         else:
             self.s = self.s[:k] + substring + self.s[k:]
+
 
 rope = Rope(sys.stdin.readline().strip())
 q = int(sys.stdin.readline())

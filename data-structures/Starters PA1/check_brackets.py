@@ -1,6 +1,7 @@
 # python3
 import sys
 
+
 class Bracket:
     def __init__(self, bracket_type, position):
         self.bracket_type = bracket_type
@@ -14,6 +15,7 @@ class Bracket:
         if self.bracket_type == '(' and c == ')':
             return True
         return False
+
 
 if __name__ == "__main__":
     text = sys.stdin.read()

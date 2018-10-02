@@ -1,6 +1,7 @@
 # Uses python3
 import sys
 
+
 def optimal_weight(W, w):
     res = [[0 for x in range(W+1)] for x in range(len(w)+1)]
 
@@ -14,6 +15,7 @@ def optimal_weight(W, w):
                 res[i][j] = max(w[i-1] + res[i-1][j-w[i-1]], res[i-1][j])
 
     return res[len(w)][W]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

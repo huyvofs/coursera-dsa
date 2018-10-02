@@ -22,5 +22,6 @@ def edit_distance(s, t):
 
     return D[n-1][m-1]
 
+
 if __name__ == "__main__":
     print(edit_distance(input(), input()))

@@ -1,5 +1,6 @@
-#Uses python3
+# Uses python3
 import sys
+
 
 def min_dot_product(a, b):
     a.sort()
@@ -8,6 +9,7 @@ def min_dot_product(a, b):
     for i in range(len(a)):
         res += a[i] * b[i]
     return res
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 
 import sys
 
@@ -10,7 +10,7 @@ def negative_cycle(adj, cost):
 
     for _ in range(vertices-1):
         for u in range(vertices):
-            i = 0 # magic variable
+            i = 0  # magic variable
             for v in adj[u]:
                 weight = dist[u] + cost[u][i]
                 if dist[v] > weight:
@@ -35,7 +35,8 @@ if __name__ == '__main__':
     data = list(map(int, input.split()))
     n, m = data[0:2]
     data = data[2:]
-    edges = list(zip(zip(data[0:(3 * m):3], data[1:(3 * m):3]), data[2:(3 * m):3]))
+    edges = list(
+        zip(zip(data[0:(3 * m):3], data[1:(3 * m):3]), data[2:(3 * m):3]))
     data = data[3 * m:]
     adj = [[] for _ in range(n)]
     cost = [[] for _ in range(n)]

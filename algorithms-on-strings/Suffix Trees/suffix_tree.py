@@ -36,10 +36,12 @@ class SuffixTree:
                 else:
                     current.out[text[j]] = self.Node(text[j:])
 
+
 def build_suffix_tree(text):
     result = []
     tree = SuffixTree(text)
     return tree
+
 
 def printOut(node):
     for child in node.out:

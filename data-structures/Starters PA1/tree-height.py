@@ -1,8 +1,10 @@
 # python3
 
-import sys, threading
-sys.setrecursionlimit(10**7) # max depth of recursion
+import sys
+import threading
+sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)  # new thread will get stack of such size
+
 
 class TreeHeight:
     def read(self):
@@ -40,9 +42,11 @@ class TreeHeight:
                         queue.append(v)
                 node_count -= 1
 
+
 def main():
     tree = TreeHeight()
     tree.read()
     print(tree.compute_height())
+
 
 threading.Thread(target=main).start()

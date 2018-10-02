@@ -1,5 +1,6 @@
 # python3
 
+
 class HeapBuilder:
     def __init__(self):
         self._swaps = []
@@ -18,7 +19,7 @@ class HeapBuilder:
 
     def SiftDown(self, i):
         min_i = i
-        left = 2*i;
+        left = 2*i
         right = 2*i + 1
 
         if left <= len(self._data) - 1 and self._data[left] < self._data[min_i]:
@@ -39,6 +40,7 @@ class HeapBuilder:
         self.ReadData()
         self.GenerateSwaps()
         self.WriteResponse()
+
 
 if __name__ == '__main__':
     heap_builder = HeapBuilder()

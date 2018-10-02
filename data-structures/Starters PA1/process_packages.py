@@ -3,10 +3,12 @@ class Request:
         self.arrival_time = arrival_time
         self.process_time = process_time
 
+
 class Response:
     def __init__(self, dropped, start_time):
         self.dropped = dropped
         self.start_time = start_time
+
 
 class Buffer:
     def __init__(self, size):
@@ -31,6 +33,7 @@ class Buffer:
         self.finish_time_.append(self.finish_time_[-1]+request.process_time)
         return Response(False, self.finish_time_[-2])
 
+
 def ReadRequests(count):
     requests = []
     for i in range(count):
@@ -38,15 +41,18 @@ def ReadRequests(count):
         requests.append(Request(arrival_time, process_time))
     return requests
 
+
 def ProcessRequests(requests, buffer):
     responses = []
     for request in requests:
         responses.append(buffer.Process(request))
     return responses
 
+
 def PrintResponses(responses):
     for response in responses:
         print(response.start_time if not response.dropped else -1)
+
 
 if __name__ == "__main__":
     size, count = map(int, input().strip().split())

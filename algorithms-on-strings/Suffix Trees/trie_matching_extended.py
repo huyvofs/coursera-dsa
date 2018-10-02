@@ -1,6 +1,7 @@
 # python3
 import sys
 
+
 def build_trie(patterns):
     tree = dict()
     tree[0] = {}
@@ -18,6 +19,7 @@ def build_trie(patterns):
                 index = index + 1
         current['$'] = {}
     return tree
+
 
 def prefix_trie_matching(text, trie, external_idx):
     idx = 0
@@ -44,7 +46,8 @@ def prefix_trie_matching(text, trie, external_idx):
         else:
             return res if '$' in current else -1
 
-def solve (text, n, patterns):
+
+def solve(text, n, patterns):
     result = set()
     trie = build_trie(patterns)
     n = len(text)

@@ -1,5 +1,6 @@
 # python3
 
+
 class Query:
 
     def __init__(self, query):
@@ -46,12 +47,14 @@ class QueryProcessor:
                     self.elems[ind] = [query.s] + self.elems[ind]
             else:
                 if query.s in self.elems[ind]:
-                    self.elems[ind] = [s for s in self.elems[ind] if s != query.s]
+                    self.elems[ind] = [
+                        s for s in self.elems[ind] if s != query.s]
 
     def process_queries(self):
         n = int(input())
         for i in range(n):
             self.process_query(self.read_query())
+
 
 if __name__ == '__main__':
     bucket_count = int(input())

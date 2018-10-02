@@ -1,8 +1,10 @@
 # python3
 
-import sys, threading
-sys.setrecursionlimit(10**6) # max depth of recursion
+import sys
+import threading
+sys.setrecursionlimit(10**6)  # max depth of recursion
 threading.stack_size(2**27)  # new thread will get stack of such size
+
 
 class TreeOrders:
     def read(self):
@@ -29,6 +31,7 @@ class TreeOrders:
     inOrder_recursive(0)
     return self.result
 
+
 def preOrder(self):
     self.result = []
 
@@ -41,6 +44,7 @@ def preOrder(self):
 
     preOrder_recursive(0)
     return self.result
+
 
 def postOrder(self):
     self.result = []
@@ -55,11 +59,13 @@ def postOrder(self):
     postOrder_recursive(0)
     return self.result
 
+
 def main():
     tree = TreeOrders()
     tree.read()
     print(" ".join(str(x) for x in tree.inOrder()))
     print(" ".join(str(x) for x in tree.preOrder()))
     print(" ".join(str(x) for x in tree.postOrder()))
+
 
 threading.Thread(target=main).start()
