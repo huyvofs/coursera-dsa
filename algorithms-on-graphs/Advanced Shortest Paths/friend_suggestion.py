@@ -52,10 +52,12 @@ if __name__ == '__main__':
     cost = [[[] for _ in range(n)], [[] for _ in range(n)]]
     for e in range(m):
         u, v, c = readl()
+
         adj[0][u - 1].append(v - 1)
         cost[0][u - 1].append(c)
         adj[1][v - 1].append(u - 1)
         cost[1][v - 1].append(c)
+
     t, = readl()
     bidij = BiDij(n)
     for i in range(t):

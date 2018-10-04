@@ -11,8 +11,7 @@ maxlen = 2 * 10**6
 
 class DistPreprocessSmall:
     def __init__(self, n, adj, cost):
-        # See description of these parameters in the starter for
-        # friend_suggestion
+        # See description of these params in the starter for friend_suggestion
         self.n = n
         self.INFINITY = n * maxlen
         self.adj = adj
@@ -55,10 +54,11 @@ class DistPreprocessSmall:
         neighbors = 0
         shortcut_cover = 0
         level = 0
-        # Compute correctly the values for the above heuristics before
-        # computing the node importance
-        importance = (shortcut_count - len(self.adj[0][v]) - len(
-            self.adj[1][v])) + neighbors + shortcut_cover + level
+        
+        importance = (
+            (shortcut_count - len(self.adj[0][v]) - len(self.adj[1][v]))
+            + neighbors + shortcut_cover + level
+        )
         return importance, shortcuts, level
 
     # See description of this method in the starter for friend_suggestion
@@ -94,10 +94,11 @@ if __name__ == '__main__':
     cost = [[[] for _ in range(n)], [[] for _ in range(n)]]
     for e in range(m):
         u, v, c = readl()
-        adj[0][u - 1].append(v - 1)
-        cost[0][u - 1].append(c)
-        adj[1][v - 1].append(u - 1)
-        cost[1][v - 1].append(c)
+        
+        adj[0][u-1].append(v-1)
+        cost[0][u-1].append(c)
+        adj[1][v-1].append(u-1)
+        cost[1][v-1].append(c)
 
     ch = DistPreprocessSmall(n, adj, cost)
     print("Ready")
@@ -105,4 +106,5 @@ if __name__ == '__main__':
     t, = readl()
     for i in range(t):
         s, t = readl()
+
         print(ch.query(s - 1, t - 1))

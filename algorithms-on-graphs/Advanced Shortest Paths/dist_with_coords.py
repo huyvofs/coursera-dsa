@@ -7,8 +7,7 @@ import math
 
 class AStar:
     def __init__(self, n, adj, cost, x, y):
-        # See the explanations of these fields in the starter for
-        # friend_suggestion
+        # See the reason of these fields in the starter for friend_suggestion
         self.n = n
         self.adj = adj
         self.cost = cost
@@ -58,6 +57,7 @@ if __name__ == '__main__':
         u, v, c = readl()
         adj[u - 1].append(v - 1)
         cost[u - 1].append(c)
+        
     t, = readl()
     astar = AStar(n, adj, cost, x, y)
     for i in range(t):

@@ -55,6 +55,11 @@ class DistPreprocessLarge:
         neighbors = 0
         shortcut_cover = 0
         level = 0
+        # Compute correctly the values for the above heuristics before computing the node importance
+        importance = (
+            (shortcut_count - len(self.adj[0][v]) - len(self.adj[1][v]))
+            + neighbors + shortcut_cover + level
+        )
         # Compute correctly the values for the above heuristics before
         # computing the node importance
         importance = (shortcut_count - len(self.adj[0][v]) - len(
@@ -119,6 +124,7 @@ if __name__ == '__main__':
     cost = [[[] for _ in range(n)], [[] for _ in range(n)]]
     for e in range(m):
         u, v, c = readl()
+
         adj[0][u - 1].append(v - 1)
         cost[0][u - 1].append(c)
         adj[1][v - 1].append(u - 1)
