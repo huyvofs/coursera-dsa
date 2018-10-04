@@ -14,10 +14,10 @@ def MinAndMax(M, m, i, j, operators):
     min_value = 10000000
     max_value = -10000000
     for k in range(i, j):
-        a = evalt(M[i][k], M[k+1][j], operators[k])
-        b = evalt(M[i][k], m[k+1][j], operators[k])
-        c = evalt(m[i][k], M[k+1][j], operators[k])
-        d = evalt(m[i][k], m[k+1][j], operators[k])
+        a = evalt(M[i][k], M[k + 1][j], operators[k])
+        b = evalt(M[i][k], m[k + 1][j], operators[k])
+        c = evalt(m[i][k], M[k + 1][j], operators[k])
+        d = evalt(m[i][k], m[k + 1][j], operators[k])
         min_value = min(min_value, a, b, c, d)
         max_value = max(max_value, a, b, c, d)
     return min_value, max_value
@@ -33,12 +33,12 @@ def get_maximum_value(digits, operators):
         M[i][i] = digits[i]
 
     for s in range(0, n):
-        for i in range(0, n-s):
+        for i in range(0, n - s):
             j = i + s
             if i != j:
                 m[i][j], M[i][j] = MinAndMax(M, m, i, j, operators)
 
-    return M[0][n-1]
+    return M[0][n - 1]
 
 
 if __name__ == "__main__":

@@ -11,9 +11,9 @@ class AStar:
         self.n = n
         self.adj = adj
         self.cost = cost
-        self.inf = n*10**6
-        self.d = [self.inf]*n
-        self.visited = [False]*n
+        self.inf = n * 10**6
+        self.d = [self.inf] * n
+        self.visited = [False] * n
         self.workset = []
         # Coordinates of the nodes
         self.x = x
@@ -55,10 +55,11 @@ if __name__ == '__main__':
         y[i] = b
     for e in range(m):
         u, v, c = readl()
-        adj[u-1].append(v-1)
-        cost[u-1].append(c)
+        adj[u - 1].append(v - 1)
+        cost[u - 1].append(c)
+        
     t, = readl()
     astar = AStar(n, adj, cost, x, y)
     for i in range(t):
         s, t = readl()
-        print(astar.query(s-1, t-1))
+        print(astar.query(s - 1, t - 1))

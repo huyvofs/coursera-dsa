@@ -14,7 +14,7 @@ def optimal_points(segments):
         if (i == 0) or (segments[i][0] != 0 and segments[i][1] != 0):
             points.append(segments[i][1])
             for x in segments[i+1:]:
-                if x[0] <= segments[i][1] and segments[i][1] <= x[1]:
+                if x[0] <= segments[i][1] <= x[1]:
                     x[0] = 0
                     x[1] = 0
             segments[i][0] = 0

@@ -1,10 +1,10 @@
-#Uses python3
+# Uses python3
 
 import sys
 
 
 def toposort(adj):
-    visited = [False]*len(adj)
+    visited = [False] * len(adj)
     order = []
 
     def explore(v):
@@ -20,6 +20,7 @@ def toposort(adj):
 
     order.reverse()
     return order
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

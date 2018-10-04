@@ -1,5 +1,6 @@
 # python3
 
+
 class JobQueue:
     def read_data(self):
         self.num_workers, m = map(int, input().split())
@@ -8,8 +9,8 @@ class JobQueue:
 
     def SiftDown(self, i):
         min_i = i
-        left = 2*i;
-        right = 2*i + 1
+        left = 2 * i
+        right = 2 * i + 1
 
         if left <= len(self.nodes) - 1:
             if self.nodes[left][1] < self.nodes[min_i][1]:
@@ -46,6 +47,7 @@ class JobQueue:
         self.read_data()
         self.assign_jobs()
         self.write_response()
+
 
 if __name__ == '__main__':
     job_queue = JobQueue()

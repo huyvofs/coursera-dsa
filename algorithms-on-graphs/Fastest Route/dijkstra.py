@@ -18,11 +18,11 @@ def extract_min(visited, dist):
 
 def distance(adj, cost, s, t):
     vertices = len(adj)
-    dist = [9223372036854775807]*vertices
-    visited = [False]*vertices
+    dist = [9223372036854775807] * vertices
+    visited = [False] * vertices
     dist[s] = 0
 
-    for _ in range(vertices-1):
+    for _ in range(vertices - 1):
         v = extract_min(visited, dist)
         if v == vertices:
             break
@@ -41,7 +41,8 @@ if __name__ == '__main__':
     data = list(map(int, input.split()))
     n, m = data[0:2]
     data = data[2:]
-    edges = list(zip(zip(data[0:(3 * m):3], data[1:(3 * m):3]), data[2:(3 * m):3]))
+    edges = list(
+        zip(zip(data[0:(3 * m):3], data[1:(3 * m):3]), data[2:(3 * m):3]))
     data = data[3 * m:]
     adj = [[] for _ in range(n)]
     cost = [[] for _ in range(n)]

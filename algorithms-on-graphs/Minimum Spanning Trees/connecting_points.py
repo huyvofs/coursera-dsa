@@ -1,13 +1,15 @@
-#Uses python3
+# Uses python3
 import sys
 import math
 
+
 def distance(xi, yi, xj, yj):
-    return math.sqrt(math.pow(xi-xj, 2) + math.pow(yi-yj, 2))
+    return math.sqrt(math.pow(xi - xj, 2) + math.pow(yi - yj, 2))
+
 
 def minimum_distance(vertices, adj, weight):
     result = 0.
-    X = set();
+    X = set()
     X.add(0)
 
     while len(X) != vertices:
@@ -30,7 +32,7 @@ if __name__ == '__main__':
     x = data[1::2]
     y = data[2::2]
     adj = [[] for _ in range(n)]
-    weight = [[0]*n for _ in range(n)]
+    weight = [[0] * n for _ in range(n)]
     for i in range(n):
         adj[i] = list(v for v in range(n) if v != i)
         for j in range(n):

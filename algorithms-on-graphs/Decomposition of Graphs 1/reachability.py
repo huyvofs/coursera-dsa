@@ -1,18 +1,21 @@
-#Uses python3
+# Uses python3
 
 import sys
 
+
 def reach(adj, x, y):
     visited = [False for x in range(len(adj))]
+
     def DFS(x):
         visited[x] = True
         for w in adj[x]:
             if w == y:
-                visited[w] == True
+                visited[w]
             if visited[w] is False:
                 DFS(w)
         return 1 if visited[y] is True else 0
     return DFS(x)
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

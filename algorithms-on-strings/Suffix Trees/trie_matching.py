@@ -1,6 +1,7 @@
 # python3
 import sys
 
+
 def build_trie(patterns):
     tree = dict()
     tree[0] = {}
@@ -18,7 +19,8 @@ def build_trie(patterns):
                 index = index + 1
     return tree
 
-def solve (text, n, patterns):
+
+def solve(text, n, patterns):
     result = []
     trie = build_trie(patterns)
 
@@ -28,6 +30,7 @@ def solve (text, n, patterns):
             result.append(i)
 
     return result
+
 
 def prefix_trie_matching(text, trie):
     idx = 0
@@ -47,6 +50,7 @@ def prefix_trie_matching(text, trie):
         else:
             return False
 
+
 if __name__ == "__main__":
     text = sys.stdin.readline().strip()
     n = int(sys.stdin.readline().strip())
@@ -55,4 +59,4 @@ if __name__ == "__main__":
         patterns += [sys.stdin.readline().strip()]
 
     ans = solve(text, n, patterns)
-    sys.stdout.write(' '.join (map(str, ans)) + '\n')
+    sys.stdout.write(' '.join(map(str, ans)) + '\n')

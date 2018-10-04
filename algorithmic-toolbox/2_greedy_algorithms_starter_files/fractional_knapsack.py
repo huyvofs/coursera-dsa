@@ -5,7 +5,7 @@ import sys
 def get_optimal_value(capacity, weights, values):
     opt_value = 0
     items = list(zip(values, weights))
-    items.sort(key=lambda item: item[0]/item[1], reverse=True)
+    items.sort(key=lambda item: item[0] / item[1], reverse=True)
     values = [item[0] for item in items]
     weights = [item[1] for item in items]
 
@@ -13,7 +13,7 @@ def get_optimal_value(capacity, weights, values):
         if capacity == 0:
             return opt_value
         min_weight = min(weight, capacity)
-        opt_value += min_weight*(value/weight)
+        opt_value += min_weight * (value / weight)
         weight -= min_weight
         capacity -= min_weight
 

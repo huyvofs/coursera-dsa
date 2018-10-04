@@ -1,9 +1,11 @@
-#Uses python3
+# Uses python3
 import sys
 import math
 
+
 def distance(xi, yi, xj, yj):
-    return math.sqrt(math.pow(xi-xj, 2) + math.pow(yi-yj, 2))
+    return math.sqrt(math.pow(xi - xj, 2) + math.pow(yi - yj, 2))
+
 
 def clustering(n, adj, weight, k):
     X = set()
@@ -22,11 +24,12 @@ def clustering(n, adj, weight, k):
 
     T = sorted(T, key=lambda e: weight[e[0]][e[1]])
 
-    for _ in range(k-2):
-        T.pop(len(T)-1)
+    for _ in range(k - 2):
+        T.pop(len(T) - 1)
 
-    d = T.pop(len(T)-1)
+    d = T.pop(len(T) - 1)
     return weight[d[0]][d[1]]
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
@@ -39,7 +42,7 @@ if __name__ == '__main__':
     k = data[0]
 
     adj = [[] for _ in range(n)]
-    weight = [[0]*n for _ in range(n)]
+    weight = [[0] * n for _ in range(n)]
     for i in range(n):
         adj[i] = list(v for v in range(n) if v != i)
         for j in range(n):

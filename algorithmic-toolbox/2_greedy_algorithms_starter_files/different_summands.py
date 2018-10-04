@@ -4,12 +4,12 @@ import sys
 
 def optimal_summands(n):
     summands = []
-    l = 1
+    m = 1
 
-    while n > 2*l:
-        summands.append(l)
-        n -= l
-        l += 1
+    while n > 2 * m:
+        summands.append(m)
+        n -= m
+        m += 1
     else:
         summands.append(n)
 

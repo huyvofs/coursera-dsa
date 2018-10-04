@@ -66,13 +66,13 @@ def update_classes(new_order, clss, l):
 def build_suffix_array(text):
     order = sort_characters(text)
     clss = compute_char_classes(text, order)
-    len = 1
+    length = 1
     len_text = len(text)
 
-    while len < len_text:
-        order = sort_doubled(text, len, order, clss)
-        clss = update_classes(order, clss, len)
-        len = len * 2
+    while length < len_text:
+        order = sort_doubled(text, length, order, clss)
+        clss = update_classes(order, clss, length)
+        length = length * 2
 
     return order
 

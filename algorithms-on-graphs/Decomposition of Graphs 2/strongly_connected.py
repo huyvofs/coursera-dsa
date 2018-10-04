@@ -1,4 +1,4 @@
-#Uses python3
+# Uses python3
 
 import sys
 
@@ -12,9 +12,10 @@ def reverse_graph(adj):
             reverse_adj[adj_vertex].append(vertex)
     return reverse_adj
 
+
 def number_of_strongly_connected_components(adj):
     result = 0
-    visited = [False]*len(adj)
+    visited = [False] * len(adj)
     finish_order = []
 
     def explore(v):
@@ -35,7 +36,7 @@ def number_of_strongly_connected_components(adj):
             explore(v)
 
     adj = reverse_graph(adj)
-    visited = [False]*len(adj)
+    visited = [False] * len(adj)
 
     while finish_order:
         v = finish_order.pop()
@@ -44,6 +45,7 @@ def number_of_strongly_connected_components(adj):
             result += 1
 
     return result
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
